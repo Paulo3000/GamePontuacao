@@ -1,0 +1,6 @@
+sitestam que de jogo que grava os recordes
+
+1-se cadastrar
+2-jogar 
+3-mostrar pontuação do jogo e o detentor do record
+4-mostrar listas de ranking 
