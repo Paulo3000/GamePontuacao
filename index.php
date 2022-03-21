@@ -14,66 +14,35 @@
 <body>
 
 
-
-    <form method="post">
+ 
+    <form method="POST" action="dados.php">
     <h3> Cadastro do jogador: </h3>
-        <!-- <p id="pontos">000</p> -->
-        Name:<input type="text" name="fname">
+      
+        Name:<input type="text" name="nome">
          <br> <br>
         PTOS:<input type="text" name="ptos">
-        <input type="submit">
+        <input type="submit" value="enviar"  nome ="bnt">
 
     </form>
     <br>  <br>
-    <script src="script01.js"></script> 
+    <!-- <script src="script01.js"></script>  -->
     
-    <h3>score: </h3>
-<!-------------------------------------------------------------------------- -->
-
-    <?php
+    <h3>score: </h3> 
 
 
 
-    $name = $_POST['fname'];
-    $ptos = $_POST['ptos']; 
-  
-   
 
-    //variavel de conexao com banco de dados
+    <div>
+   <br><hr>
+       <h3>Play game</h3> 
+   <a href="page01.html" target="_blanck">
+   <input type="submit" value="Jogar"  nome ="bnt2">
+   </a>
+   </div> 
 
-    try {
-        $pdo = new PDO("mysql:dbname=pontuacao;host=localhost", "root", "");
-    } catch (PDOException $e) {
-        echo $e;
-    }
 
-    //-------insert 
-
-    $pdo->query("INSERT INTO best_score (nome,pontos) VALUES('$name','$ptos')") ;
-     
-      //------------select
-     
-       $sql = $pdo->prepare("SELECT *FROM best_score  ORDER BY `pontos` DESC");
-       $sql->execute();
-       $fetchBest_score = $sql->fetchAll();
-
-       foreach($fetchBest_score as $key =>$value){
-        
-        echo $value['nome'].'-----------------> '.$value['pontos'];
-        echo'<br>';
-
-       }
 
     
-
-    
-      
-       
-
-
-
-    ?>
-
 
 
 
